@@ -26,8 +26,9 @@ st.write(
 # Los archivos geográficos deben estar en la carpeta "datos",
 # ubicada junto a este archivo Python.
 CARPETA_DATOS = Path(__file__).parent / "datos"
-ARCHIVO_SHP = CARPETA_DATOS / "l_1067_v1_establecimientos_de_salud_junio_2026.shp"
+ARCHIVO_SHP = CARPETA_DATOS / CARPETA_DATOS = Path(__file__).parent / "datos"
 
+ARCHIVO_SHP = CARPETA_DATOS / "l_1067_v1_establecimientos_de_salud_junio_2026.shp"
 
 # =====================================================
 # 2. CARGAR DATOS GEOGRÁFICOS
