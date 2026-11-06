@@ -25,16 +25,25 @@ st.write(
 
 # Los archivos geográficos deben estar en la carpeta "datos",
 # ubicada junto a este archivo Python.
-CARPETA_DATOS = Path(__file__).parent / "datos"
+CARPETA_DATOS = Path(__file__).parent
 
-ARCHIVO_SHP = CARPETA_datos / "Recintos Hospitalarios.shp"
+archivos_shp = sorted(CARPETA_DATOS.glob("*.shp"))
+
+if not archivos_shp:
+    st.error(
+        "No hay ningún archivo .shp junto a este script. "
+        f"Archivos que ve el servidor: {[p.name for p in CARPETA_DATOS.iterdir()]}"
+    )
+    st.stop()
+
+ARCHIVO_SHP = archivos_shp[0]
 
 # =====================================================
 # 2. CARGAR DATOS GEOGRÁFICOS
 # =====================================================
 
 @st.cache_data
-def cargar_datos(ruta_archivo):
+def cargar_DATOS(ruta_archivo):
     ruta = Path(ruta_archivo)
 
     if not ruta.exists():
