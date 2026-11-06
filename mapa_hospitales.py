@@ -27,7 +27,7 @@ st.write(
 # ubicada junto a este archivo Python.
 CARPETA_DATOS = Path(__file__).parent / "datos"
 
-ARCHIVO_SHP = CARPETA_DATOS / "Recintos Hospitalarios.shp"
+ARCHIVO_SHP = CARPETA_datos / "Recintos Hospitalarios.shp"
 
 # =====================================================
 # 2. CARGAR DATOS GEOGRÁFICOS
