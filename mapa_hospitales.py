@@ -43,15 +43,11 @@ ARCHIVO_SHP = archivos_shp[0]
 # =====================================================
 
 @st.cache_data
-def cargar_DATOS(ruta_archivo):
+def cargar_datos(ruta_archivo):
     ruta = Path(ruta_archivo)
 
     if not ruta.exists():
-        raise FileNotFoundError(
-            f"No se encontró el archivo: {ruta}. "
-            "Comprueba que exista la carpeta 'Datos' y que "
-            "contenga el Shapefile."
-        )
+        raise FileNotFoundError(f"No se encontró el archivo: {ruta}.")
 
     gdf = gpd.read_file(ruta)
 
